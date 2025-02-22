@@ -1,4 +1,4 @@
-import Niche from '../model/Niche.model.js';
+import Niche from '../model/niche.model.js';
 
 //Fetch all niches
 async function get_all_niche(req, res) {

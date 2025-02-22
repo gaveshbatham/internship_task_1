@@ -1,6 +1,6 @@
 import Campaign from "../model/campaign.model.js";
 import Platform from "../model/platform.model.js";
-import GroupNiche from "../model/Niche.model.js";
+import Niche from "../model/niche.model.js";
 import Group from "../model/group.model.js";
 
 
@@ -27,11 +27,11 @@ async function add_to_campaign(req, res) {
             });
         }
 
-        // Check if group_niche exists in the GroupNiche model
-        const existingGroupNiches = await GroupNiche.findAll({
+        // Check if group_niche exists in the Niche model
+        const existingNiches = await Niche.findAll({
             where: { n_id: group_niche }
         });
-        if (existingGroupNiches.length !== group_niche.length) {
+        if (existingNiches.length !== group_niche.length) {
             return res.status(400).json({
                 success: false,
                 message: "Some niche IDs are invalid."
@@ -180,11 +180,11 @@ async function update_c_id_data(req, res) {
             });
         }
 
-        // check if group_niche exists in the GroupNiche model
-        const existingGroupNiches = await GroupNiche.findAll({
+        // check if group_niche exists in the Niche model
+        const existingNiches = await Niche.findAll({
             where: { n_id: group_niche }
         });
-        if (existingGroupNiches.length !== group_niche.length) {
+        if (existingNiches.length !== group_niche.length) {
             return res.status(400).json({
                 success: false,
                 message: "Some niche IDs are invalid."

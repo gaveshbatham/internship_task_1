@@ -1,5 +1,5 @@
 import { where } from 'sequelize';
-import User from '../model/User.model.js'; 
+import User from '../model/user.model.js'; 
 import Campaign from '../model/campaign.model.js'
 // get a single user by email
 async function get_user_data(req, res) {
